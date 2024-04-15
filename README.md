@@ -11,3 +11,9 @@ cargo add tokio -F macros -F rt-multi-thread
 cargo install cargo-watch
 cargo watch -x run
 ```
+
+```sh
+cargo doc
+cargo doc --open # en devcontainer falla
+```
+
