@@ -1,22 +1,41 @@
 {
     "client": "Thunder Client",
     "collectionName": "axum",
-    "dateExported": "2024-04-15T18:56:02.063Z",
+    "dateExported": "2024-04-15T20:16:49.680Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "c390f71d-486c-464d-a20b-94133da0dab9",
-            "colId": "8d871bfd-f383-4f6e-8f05-97b41311d289",
+            "_id": "cd62f812-fc5a-4493-b2c8-051c02093206",
+            "colId": "46201410-2296-44e1-b004-288ef85601d7",
             "containerId": "",
             "name": "localhost:3000",
             "url": "localhost:3000",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2024-04-15T18:55:40.963Z",
-            "modified": "2024-04-15T18:55:40.963Z",
+            "created": "2024-04-15T18:57:04.702Z",
+            "modified": "2024-04-15T18:57:04.702Z",
             "headers": [],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "79c4a046-dc4f-49d0-8969-e936526b9743",
+            "colId": "46201410-2296-44e1-b004-288ef85601d7",
+            "containerId": "",
+            "name": "mirror_body_string",
+            "url": "localhost:3000/mirror_body_string",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-04-15T20:05:23.756Z",
+            "modified": "2024-04-15T20:06:11.484Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "text",
+                "raw": "Hola desde cliente thunder",
+                "form": []
+            },
             "tests": []
         }
     ]
