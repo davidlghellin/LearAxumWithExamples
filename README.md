@@ -16,3 +16,8 @@ cargo watch -x run
 cargo doc
 cargo doc --open # en devcontainer falla
 ```
+
+```sh
+cargo add serde
+cargo add serde -F derive
+```

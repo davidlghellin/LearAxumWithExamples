@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "axum",
-    "dateExported": "2024-04-15T20:16:49.680Z",
+    "dateExported": "2024-04-15T20:47:42.987Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -34,6 +34,25 @@
             "body": {
                 "type": "text",
                 "raw": "Hola desde cliente thunder",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3cd510ae-b9d3-4915-b570-c7dfe53965f8",
+            "colId": "46201410-2296-44e1-b004-288ef85601d7",
+            "containerId": "",
+            "name": "mirror_body_json",
+            "url": "localhost:3000/mirror_body_json",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-04-15T20:19:03.288Z",
+            "modified": "2024-04-15T20:38:32.899Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"message\": \"Hola desde thunderclient de json\"\n}",
                 "form": []
             },
             "tests": []
