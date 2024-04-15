@@ -14,3 +14,7 @@ http POST localhost:3000/mirror_body_json message="desde json httpie"
 http GET http://localhost:3000/path_variables/12
 http GET http://localhost:3000/path_variables/15
 ```
+
+```sh
+http GET http://localhost:3000/query_params?message=hola mundo&id=22
+```
