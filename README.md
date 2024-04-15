@@ -16,4 +16,3 @@ cargo watch -x run
 cargo doc
 cargo doc --open # en devcontainer falla
 ```
-
