@@ -1,0 +1,23 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "axum",
+    "dateExported": "2024-04-15T18:56:02.063Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c390f71d-486c-464d-a20b-94133da0dab9",
+            "colId": "8d871bfd-f383-4f6e-8f05-97b41311d289",
+            "containerId": "",
+            "name": "localhost:3000",
+            "url": "localhost:3000",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-04-15T18:55:40.963Z",
+            "modified": "2024-04-15T18:55:40.963Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
