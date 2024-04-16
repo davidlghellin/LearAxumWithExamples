@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "axum",
-    "dateExported": "2024-04-16T05:36:24.285Z",
+    "dateExported": "2024-04-16T13:50:21.877Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -126,6 +126,20 @@
                     "value": "hola mundo desde headers"
                 }
             ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bbfc89a0-17c1-42fb-92ad-1fe58fcd82fb",
+            "colId": "46201410-2296-44e1-b004-288ef85601d7",
+            "containerId": "",
+            "name": "middleware_message",
+            "url": "http://localhost:3000/middleware_message",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-04-16T13:38:10.785Z",
+            "modified": "2024-04-16T13:38:27.666Z",
+            "headers": [],
             "params": [],
             "tests": []
         }
