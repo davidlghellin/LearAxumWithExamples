@@ -35,3 +35,9 @@ docker build -t     my-rust-app .
 docker run   --name myapp -p 3030:3000 -d
 docker exec -it     myapp sh
 ```
+
+## Docker-compose + postgres
+
+```sh
+pgcli -h learnaxum_devcontainer-database-1 -p 5432 -U postgres postgres
+```
