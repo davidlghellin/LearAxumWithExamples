@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "axum",
-    "dateExported": "2024-04-16T14:38:06.643Z",
+    "dateExported": "2024-04-16T15:53:13.917Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -159,6 +159,34 @@
                     "value": "Hola desde thender"
                 }
             ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "804c029a-f1a3-481f-8eea-790bdbc3072d",
+            "colId": "46201410-2296-44e1-b004-288ef85601d7",
+            "containerId": "",
+            "name": "always_errors",
+            "url": "http://localhost:3000/always_errors",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2024-04-16T15:19:05.256Z",
+            "modified": "2024-04-16T15:19:15.882Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "eb659e6c-2f3e-4c1e-9dc7-1e1838bc407d",
+            "colId": "46201410-2296-44e1-b004-288ef85601d7",
+            "containerId": "",
+            "name": "returns_201",
+            "url": "http://localhost:3000/returns_201",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2024-04-16T15:38:58.910Z",
+            "modified": "2024-04-16T15:39:43.129Z",
+            "headers": [],
             "params": [],
             "tests": []
         }

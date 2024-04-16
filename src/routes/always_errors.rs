@@ -10,5 +10,6 @@ pub async fn always_errors() -> Result<(), StatusCode> {
     StatusCode::IM_A_TEAPOT
     */
     //Ok(());
+    // 201 recurso creado con exito
     Err(StatusCode::IM_A_TEAPOT)
 }
