@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "axum",
-    "dateExported": "2024-04-16T13:50:21.877Z",
+    "dateExported": "2024-04-16T14:38:06.643Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -140,6 +140,25 @@
             "created": "2024-04-16T13:38:10.785Z",
             "modified": "2024-04-16T13:38:27.666Z",
             "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "74b28756-c1a5-4740-9444-e542af41213a",
+            "colId": "46201410-2296-44e1-b004-288ef85601d7",
+            "containerId": "",
+            "name": "read_middleware_custom_headers",
+            "url": "http://localhost:3000/read_middleware_custom_headers",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-04-16T14:02:52.149Z",
+            "modified": "2024-04-16T14:04:50.282Z",
+            "headers": [
+                {
+                    "name": "message",
+                    "value": "Hola desde thender"
+                }
+            ],
             "params": [],
             "tests": []
         }

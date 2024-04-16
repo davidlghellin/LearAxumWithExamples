@@ -6,8 +6,10 @@ mod query_params;
 mod mirror_user_agent;
 mod mirror_custom_agent;
 mod middleware_message;
+mod read_middleware_custom_headers;
+mod set_middleware_custom;
 
-use axum::{body::Body, http::Method, routing::{get, post}, Extension, Router};
+use axum::{body::Body, http::Method, middleware, routing::{get, post}, Extension, Router};
 use tower_http::cors::{Any, CorsLayer};
 
 use hello_word::hello_word;
@@ -18,6 +20,8 @@ use query_params::query_params;
 use mirror_user_agent::mirror_user_agent;
 use mirror_custom_agent::mirror_custom_agent;
 use middleware_message::middleware_message;
+use read_middleware_custom_headers::read_middleware_custom_headers;
+use set_middleware_custom::set_middleware_custom;
 
 #[derive(Clone)]
 pub struct SharedDate {
@@ -34,6 +38,8 @@ pub fn create_routes() -> Router<Body> {
     let shared_data=SharedDate{ message:"hola desde shared".to_owned()};
 
     Router::new()
+        .route("/read_middleware_custom_headers", get(read_middleware_custom_headers))
+        .route_layer(middleware::from_fn(set_middleware_custom))
         .route("/", get(hello_word))
         .route("/mirror_body_string", post(mirror_body_string))
         .route("/mirror_body_json", post(mirror_body_json))
@@ -46,4 +52,5 @@ pub fn create_routes() -> Router<Body> {
         .route("/middleware_message", get(middleware_message))
         .layer(cors)
         .layer(Extension(shared_data))
+
 }
