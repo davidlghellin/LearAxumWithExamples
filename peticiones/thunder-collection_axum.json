@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "axum",
-    "dateExported": "2024-04-16T16:04:19.286Z",
+    "dateExported": "2024-04-16T16:27:58.369Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -202,6 +202,25 @@
             "modified": "2024-04-16T15:56:04.598Z",
             "headers": [],
             "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bdd34f12-8fc5-4328-b88e-66087e72ae3c",
+            "colId": "46201410-2296-44e1-b004-288ef85601d7",
+            "containerId": "",
+            "name": "validate_data_with_serde",
+            "url": "http://localhost:3000/validate_data_with_serde",
+            "method": "POST",
+            "sortNum": 160000,
+            "created": "2024-04-16T16:13:09.911Z",
+            "modified": "2024-04-16T16:23:55.164Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"user\": \"David\",\n  \"pass\": \"1234\"\n}",
+                "form": []
+            },
             "tests": []
         }
     ]
