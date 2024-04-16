@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "axum",
-    "dateExported": "2024-04-15T20:47:42.987Z",
+    "dateExported": "2024-04-16T05:27:11.426Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -55,6 +55,59 @@
                 "raw": "{\n  \"message\": \"Hola desde thunderclient de json\"\n}",
                 "form": []
             },
+            "tests": []
+        },
+        {
+            "_id": "20666d8d-a7a6-4ce7-84ab-0d8e073bd1ad",
+            "colId": "46201410-2296-44e1-b004-288ef85601d7",
+            "containerId": "",
+            "name": "get_things",
+            "url": "http://localhost:3000/path_variables/12",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-04-15T20:59:46.652Z",
+            "modified": "2024-04-15T21:06:26.678Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "576d7623-8395-4b97-abec-c339f71fe171",
+            "colId": "46201410-2296-44e1-b004-288ef85601d7",
+            "containerId": "",
+            "name": "query_params",
+            "url": "http://localhost:3000/query_params?message=hola mundo&id=22",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-04-15T21:36:12.219Z",
+            "modified": "2024-04-15T21:38:02.128Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "message",
+                    "value": "hola mundo",
+                    "isPath": false
+                },
+                {
+                    "name": "id",
+                    "value": "22",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "04a1357f-d2f3-439a-a0d8-c270052b207c",
+            "colId": "46201410-2296-44e1-b004-288ef85601d7",
+            "containerId": "",
+            "name": "mirror_user_agent",
+            "url": "http://localhost:3000/mirror_user_agent",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-04-16T05:22:44.604Z",
+            "modified": "2024-04-16T05:23:01.358Z",
+            "headers": [],
+            "params": [],
             "tests": []
         }
     ]

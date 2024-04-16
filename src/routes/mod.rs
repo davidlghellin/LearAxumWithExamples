@@ -3,6 +3,7 @@ mod mirror_body_string;
 mod mirror_body_json;
 mod path_variables;
 mod query_params;
+mod mirror_user_agent;
 
 use axum::{body::Body, routing::{get, post}, Router};
 
@@ -11,6 +12,7 @@ use mirror_body_string::mirror_body_string;
 use mirror_body_json::mirror_body_json;
 use path_variables::{hard_coded_patch, path_variables};
 use query_params::query_params;
+use mirror_user_agent::mirror_user_agent;
 
 pub fn create_routes() -> Router<Body> {
     Router::new()
@@ -21,4 +23,5 @@ pub fn create_routes() -> Router<Body> {
         // se ejecutará la de 15, porque el match es más exaustivo
         .route("/path_variables/15", get(hard_coded_patch))
         .route("/query_params", get(query_params))
+        .route("/mirror_user_agent", get(mirror_user_agent))
 }

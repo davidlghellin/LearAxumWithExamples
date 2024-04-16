@@ -21,3 +21,8 @@ cargo doc --open # en devcontainer falla
 cargo add serde
 cargo add serde -F derive
 ```
+
+Para poder obtener los header, añadimos la feature correspondiente
+```sh
+cargo add axum -F headers
+```
