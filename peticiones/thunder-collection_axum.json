@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "axum",
-    "dateExported": "2024-04-16T05:27:11.426Z",
+    "dateExported": "2024-04-16T05:36:24.285Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -107,6 +107,25 @@
             "created": "2024-04-16T05:22:44.604Z",
             "modified": "2024-04-16T05:23:01.358Z",
             "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d88ce172-4c4e-408a-9c20-daa2eb523ece",
+            "colId": "46201410-2296-44e1-b004-288ef85601d7",
+            "containerId": "",
+            "name": "mirror_user_agent_custom",
+            "url": "http://localhost:3000/mirror_custom_agent",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-04-16T05:28:19.714Z",
+            "modified": "2024-04-16T05:29:56.416Z",
+            "headers": [
+                {
+                    "name": "x-message",
+                    "value": "hola mundo desde headers"
+                }
+            ],
             "params": [],
             "tests": []
         }
