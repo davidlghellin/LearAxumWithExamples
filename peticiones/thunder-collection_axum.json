@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "axum",
-    "dateExported": "2024-04-16T15:53:13.917Z",
+    "dateExported": "2024-04-16T16:04:19.286Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -186,6 +186,20 @@
             "sortNum": 140000,
             "created": "2024-04-16T15:38:58.910Z",
             "modified": "2024-04-16T15:39:43.129Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f87975a5-70b1-4c1a-a0fd-8fd2cdb69a05",
+            "colId": "46201410-2296-44e1-b004-288ef85601d7",
+            "containerId": "",
+            "name": "get_json",
+            "url": "http://localhost:3000/get_json",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2024-04-16T15:55:53.805Z",
+            "modified": "2024-04-16T15:56:04.598Z",
             "headers": [],
             "params": [],
             "tests": []
