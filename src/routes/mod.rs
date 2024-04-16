@@ -12,6 +12,7 @@ mod always_errors;
 mod returns_201;
 mod get_json;
 mod validate_data_with_serde;
+mod custom_json_extractor;
 
 use axum::{body::Body, http::Method, middleware, routing::{get, post}, Extension, Router};
 use tower_http::cors::{Any, CorsLayer};
@@ -30,6 +31,7 @@ use always_errors::always_errors;
 use returns_201::returns_201;
 use get_json::get_json;
 use validate_data_with_serde::validate_data_with_serde;
+use custom_json_extractor::custom_json_extractor;
 
 #[derive(Clone)]
 pub struct SharedDate {
@@ -64,5 +66,6 @@ pub fn create_routes() -> Router<Body> {
         .route("/returns_201", post(returns_201))
         .route("/get_json", get(get_json))
         .route("/validate_data_with_serde", post(validate_data_with_serde))
+        .route("/custom_json_extractor", post(custom_json_extractor))
 
 }
