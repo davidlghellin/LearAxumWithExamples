@@ -26,3 +26,12 @@ Para poder obtener los header, añadimos la feature correspondiente
 ```sh
 cargo add axum -F headers
 ```
+
+## Docker
+
+Para construir en local
+```sh
+docker build -t     my-rust-app .
+docker run   --name myapp -p 3030:3000 -d
+docker exec -it     myapp sh
+```
