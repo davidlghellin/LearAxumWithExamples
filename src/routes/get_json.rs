@@ -36,4 +36,9 @@ mod tests {
         let d1 = Data::new("mensaje".to_owned(), 32, "count".to_owned());
         assert_eq!(d1.message, d1.message)
     }
+    #[test]
+    fn basic_test_2() {
+        let d1 = Data::new("mensaje".to_owned(), 32, "count".to_owned());
+        assert_eq!(d1.message, "mensaje".to_owned())
+    }
 }
