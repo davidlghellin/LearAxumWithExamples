@@ -1,7 +1,7 @@
 use axum::Json;
 use serde::Serialize;
 
-#[derive(Serialize, Default)]
+#[derive(Serialize, Default, PartialEq, Debug)]
 pub struct Data {
     message: String,
     count: i32,
@@ -29,6 +29,7 @@ pub async fn get_json() -> Json<Data> {
 
 #[cfg(test)]
 mod tests {
+    use crate::routes::get_json::get_json;
     use crate::routes::get_json::Data;
 
     #[test]
@@ -40,5 +41,16 @@ mod tests {
     fn basic_test_2() {
         let d1 = Data::new("mensaje".to_owned(), 32, "count".to_owned());
         assert_eq!(d1.message, "mensaje".to_owned())
+    }
+
+    #[tokio::test]
+    async fn get_json_test() {
+        let data = get_json().await;
+        let json = axum::Json(Data {
+            message: "yo soy data".to_owned(),
+            count: 48,
+            username: "user-name".to_owned(),
+        });
+        assert_eq!(data.0, json.0)
     }
 }
