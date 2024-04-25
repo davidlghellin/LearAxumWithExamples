@@ -9,6 +9,7 @@ pub struct Data {
 }
 
 impl Data {
+    #![allow(dead_code)]
     fn new(message: String, count: i32, username: String) -> Data {
         Data {
             message: message,
