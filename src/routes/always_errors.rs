@@ -13,3 +13,22 @@ pub async fn always_errors() -> Result<(), StatusCode> {
     // 201 recurso creado con exito
     Err(StatusCode::IM_A_TEAPOT)
 }
+
+
+mod test {
+
+    #[tokio::test]
+    async fn test_always_errors() {
+        use axum::Router;
+        use axum_test_helper::TestClient;
+
+        // you can replace this Router with your own app
+        let app = Router::new().route("/", axum::routing::get(crate::routes::always_errors));
+
+        // initiate the TestClient with the previous declared Router
+        let client = TestClient::new(app);
+        let res: axum_test_helper::TestResponse = client.get("/").send().await;
+        assert_eq!(res.status(), axum::http::StatusCode::IM_A_TEAPOT);
+    }
+
+}

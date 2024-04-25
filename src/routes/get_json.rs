@@ -1,7 +1,7 @@
 use axum::Json;
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Default, PartialEq, Debug)]
+#[derive(Serialize, Deserialize, Default, PartialEq, Debug)]
 pub struct Data {
     message: String,
     count: i32,
@@ -53,5 +53,28 @@ mod tests {
             username: "user-name".to_owned(),
         });
         assert_eq!(data.0, json.0)
+    }
+
+    #[tokio::test]
+    async fn test_endpoint_get_json_endpoint() {
+        use axum::Router;
+        use axum_test_helper::TestClient;
+
+        // you can replace this Router with your own app
+        let app = Router::new().route("/", axum::routing::get(crate::routes::get_json));
+
+        // initiate the TestClient with the previous declared Router
+        let client = TestClient::new(app);
+        let res: axum_test_helper::TestResponse = client.get("/").send().await;
+        
+        let res: Data = res.json::<Data>().await;
+        assert_eq!(
+            res,
+            Data {
+                message: "yo soy data".to_owned(),
+                count: 48,
+                username: "user-name".to_owned(),
+            }
+        );
     }
 }
