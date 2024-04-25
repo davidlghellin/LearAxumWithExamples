@@ -46,13 +46,12 @@ mod tests {
 
     #[tokio::test]
     async fn get_json_test() {
-        let data = get_json().await;
         let json = axum::Json(Data {
             message: "yo soy data".to_owned(),
             count: 48,
             username: "user-name".to_owned(),
         });
-        assert_eq!(data.0, json.0)
+        assert_eq!(get_json().await.0, json.0)
     }
 
     #[tokio::test]
@@ -67,9 +66,8 @@ mod tests {
         let client = TestClient::new(app);
         let res: axum_test_helper::TestResponse = client.get("/").send().await;
         
-        let res: Data = res.json::<Data>().await;
         assert_eq!(
-            res,
+            res.json::<Data>().await,
             Data {
                 message: "yo soy data".to_owned(),
                 count: 48,

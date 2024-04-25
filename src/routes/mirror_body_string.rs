@@ -4,7 +4,6 @@ pub async fn mirror_body_string(body: String) -> String {
 }
 
 mod test {
-
     #[tokio::test]
     async fn test_endpoint_mirror_body_string() {
         use axum::Router;
@@ -18,7 +17,6 @@ mod test {
         let res: axum_test_helper::TestResponse =
             client.post("/").body("hola".to_owned()).send().await;
 
-        let res = res.text().await;
-        assert_eq!(res, "hola".to_owned());
+        assert_eq!(res.text().await, "hola".to_owned());
     }
 }

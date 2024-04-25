@@ -40,10 +40,9 @@ mod test {
 
         let res: axum_test_helper::TestResponse =
             client.post("/").json(&mirron_json).send().await;
-        let res: MirrorJson = res.json::<MirrorJson>().await;
 
         let mirror_json_response_expected: MirrorJsonResponse = MirrorJsonResponse::from(mirron_json);
-        let mirror_json_response: MirrorJsonResponse = MirrorJsonResponse::from(res);
+        let mirror_json_response: MirrorJsonResponse = MirrorJsonResponse::from(res.json::<MirrorJson>().await);
 
         assert_eq!(mirror_json_response, mirror_json_response_expected);
     }
