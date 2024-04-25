@@ -66,18 +66,18 @@ pub fn create_routes() -> Router<Body> {
         .route("/mirror_body_json", post(mirror_body_json))
         .route("/path_variables/:id", get(path_variables))
         // se ejecutará la de 15, porque el match es más exaustivo
-        .route("/path_variables/15", get(hard_coded_patch))
-        .route("/query_params", get(query_params))
         .route("/mirror_user_agent", get(mirror_user_agent))
         .route("/mirror_custom_agent", get(mirror_custom_agent))
         .route("/middleware_message", get(middleware_message))
+        .route("/path_variables/15", get(hard_coded_patch))
+        .route("/query_params", get(query_params))
         .layer(cors)
         .layer(Extension(shared_data))
         .route("/always_errors", get(always_errors))
-        .route("/returns_201", post(returns_201))
-        .route("/get_json", get(get_json))
-        .route("/validate_data_with_serde", post(validate_data_with_serde))
         .route("/custom_json_extractor", post(custom_json_extractor))
+        .route("/get_json", get(get_json))
+        .route("/returns_201", post(returns_201))
+        .route("/validate_data_with_serde", post(validate_data_with_serde))
 }
 
 mod test {
