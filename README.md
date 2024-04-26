@@ -1,3 +1,4 @@
+[![codecov](https://codecov.io/gh/davidlghellin/LearAxumWithExamples/graph/badge.svg?token=5ZX4BFDXUD)](https://codecov.io/gh/davidlghellin/LearAxumWithExamples)
 # Learn Axum
 
 ```sh
