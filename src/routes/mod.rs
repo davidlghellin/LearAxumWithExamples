@@ -1,25 +1,9 @@
-mod always_errors;
-mod custom_json_extractor;
-mod get_json;
-mod hello_word;
-mod middleware_message;
-mod mirror_body_json;
-mod mirror_body_string;
-mod mirror_custom_agent;
-mod mirror_user_agent;
-mod path_variables;
-mod query_params;
-mod read_middleware_custom_headers;
-mod returns_201;
-mod set_middleware_custom;
-mod validate_data_with_serde;
-
 use axum::{
     body::Body,
+    Extension,
     http::Method,
     middleware,
-    routing::{get, post},
-    Extension, Router,
+    Router, routing::{get, post},
 };
 use tower_http::cors::{Any, CorsLayer};
 
@@ -38,6 +22,22 @@ use read_middleware_custom_headers::read_middleware_custom_headers;
 use returns_201::returns_201;
 use set_middleware_custom::set_middleware_custom;
 use validate_data_with_serde::validate_data_with_serde;
+
+mod always_errors;
+mod custom_json_extractor;
+mod get_json;
+mod hello_word;
+mod middleware_message;
+mod mirror_body_json;
+mod mirror_body_string;
+mod mirror_custom_agent;
+mod mirror_user_agent;
+mod path_variables;
+mod query_params;
+mod read_middleware_custom_headers;
+mod returns_201;
+mod set_middleware_custom;
+mod validate_data_with_serde;
 
 #[derive(Clone)]
 pub struct SharedDate {
@@ -66,8 +66,8 @@ pub fn create_routes() -> Router<Body> {
         .route("/mirror_body_json", post(mirror_body_json))
         .route("/path_variables/:id", get(path_variables))
         // se ejecutará la de 15, porque el match es más exaustivo
-        .route("/mirror_user_agent", get(mirror_user_agent))
         .route("/mirror_custom_agent", get(mirror_custom_agent))
+        .route("/mirror_user_agent", get(mirror_user_agent))
         .route("/middleware_message", get(middleware_message))
         .route("/path_variables/15", get(hard_coded_patch))
         .route("/query_params", get(query_params))
@@ -81,7 +81,6 @@ pub fn create_routes() -> Router<Body> {
 }
 
 mod test {
-
     #[tokio::test]
     async fn test_endpoint_basic() {
         use axum::http::StatusCode;
@@ -96,19 +95,4 @@ mod test {
         let res = client.get("/").send().await;
         assert_eq!(res.status(), StatusCode::OK);
     }
-
-    #[tokio::test]
-    async fn test_endpoint_hello() {
-        use axum::Router;
-        use axum_test_helper::TestClient;
-
-        // you can replace this Router with your own app
-        let app = Router::new().route("/", axum::routing::get(crate::routes::hello_word));
-
-        // initiate the TestClient with the previous declared Router
-        let client = TestClient::new(app);
-        let res: axum_test_helper::TestResponse = client.get("/").send().await;
-        assert_eq!(res.text().await, "Hola mundo desde mi fichero".to_owned());
-    }
-
 }

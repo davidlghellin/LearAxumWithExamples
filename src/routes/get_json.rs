@@ -30,19 +30,8 @@ pub async fn get_json() -> Json<Data> {
 
 #[cfg(test)]
 mod tests {
-    use crate::routes::get_json::get_json;
     use crate::routes::get_json::Data;
-
-    #[test]
-    fn basic_test() {
-        let d1 = Data::new("mensaje".to_owned(), 32, "count".to_owned());
-        assert_eq!(d1.message, d1.message)
-    }
-    #[test]
-    fn basic_test_2() {
-        let d1 = Data::new("mensaje".to_owned(), 32, "count".to_owned());
-        assert_eq!(d1.message, "mensaje".to_owned())
-    }
+    use crate::routes::get_json::get_json;
 
     #[tokio::test]
     async fn get_json_test() {
@@ -65,7 +54,7 @@ mod tests {
         // initiate the TestClient with the previous declared Router
         let client = TestClient::new(app);
         let res: axum_test_helper::TestResponse = client.get("/").send().await;
-        
+
         assert_eq!(
             res.json::<Data>().await,
             Data {

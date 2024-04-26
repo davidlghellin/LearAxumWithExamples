@@ -18,7 +18,7 @@ pub async fn always_errors() -> Result<(), StatusCode> {
 mod test {
 
     #[tokio::test]
-    async fn test_always_errors() {
+    async fn test_endpoint_always_errors() {
         use axum::Router;
         use axum_test_helper::TestClient;
 
